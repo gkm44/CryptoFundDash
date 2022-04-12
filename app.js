@@ -19,9 +19,9 @@ const app = Vue.createApp({
   
       getQuotes() {
         this.AXS_quote();
-        setInterval(this.AXS_quote,1000);
+        setInterval(this.AXS_quote,60000);
         this.BTC_quote();
-        setInterval(this.BTC_quote,1000);
+        setInterval(this.BTC_quote, 60000);
       },
   
 
