@@ -15,6 +15,11 @@ const app = Vue.createApp({
         
       };
     },
+
+    mounted: function () {
+      this.getQuotes()
+    },
+
     methods: {
   
       getQuotes() {
