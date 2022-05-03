@@ -17,8 +17,35 @@ const app = Vue.createApp({
     },
 
     mounted: function () {
-      this.getQuotes()
+      function startTimer(duration, display) {
+        var start = Date.now(),
+            diff,
+            seconds = 60;
+        function timer() {
+           
+            diff = duration - (((Date.now() - start) / 1000) | 0);
+    
+    
+            seconds = (diff % 60) | 0;
+  
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+            display.textContent = "0" + ":" + seconds; 
+
+        };
+        
+        timer();
+        setInterval(timer, 0);
+    }
+    
+    window.onload = function () {
+        var oneMinute = 60 * 1000,
+            display = document.querySelector('#time');
+        startTimer(oneMinute, display);
+    };
+    this.getQuotes()
     },
+
 
     methods: {
   
